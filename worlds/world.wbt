@@ -1,0 +1,444 @@
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/lights/protos/FloorLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/living_room_furniture/protos/Sofa.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/living_room_furniture/protos/Carpet.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/living_room_furniture/protos/Armchair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/plants/protos/PottedTree.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/chairs/protos/Chair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/tables/protos/RoundTable.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/VarnishedPine.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.1519619654681956 -0.1411449396853831 -0.9782564423770754 4.616435755326024
+  position 0.5903791395541581 -9.241713298397833 3.381093921600242
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+PottedTree {
+  translation -2.95 -1.94 -0.005392253963724558
+  rotation 0.022893282834169984 0.30891372544578677 0.950814497066741 3.380931919431905e-17
+  name "potted tree2"
+  potAndTreeColor 0.666667 0 0
+  leavesColor 0 1 0
+}
+FloorLight {
+  translation 2.97 2.84 -0.0003936309254206627
+  rotation 0.44991151185380884 -0.8267615333952135 -0.33770549062669303 2.2498841559305296e-17
+  bulbColor 0.333333 0 0
+  supportColor 0.333333 0 0
+  pointLightColor 0.333333 0 0
+  pointLightIntensity 5
+  pointLightCastShadows TRUE
+}
+Sofa {
+  translation -2.859682697735936 3.0612430381441636e-18 -9.928972543582493e-05
+  rotation 4.3854687385160396e-13 -1 1.296028133034499e-13 4.319971890952637e-05
+  color 0.333333 0 0
+}
+Carpet {
+  translation -0.94 0 0
+  rotation 0 0 1 -1.5707953071795862
+  color 0.498039 0.25098 0.207843
+}
+Armchair {
+  translation -0.9099999999938497 2.9198671425026315 -9.923685855089959e-05
+  rotation -1.6885871064039375e-05 -1.688588827903422e-05 -0.9999999997148672 1.5707953071681937
+  color 0.333333 0 0
+}
+PottedTree {
+  translation -2.95 1.94 -0.005392253963724558
+  rotation 0.022893282834169984 0.30891372544578677 0.950814497066741 3.380931919431905e-17
+  potAndTreeColor 0.666667 0 0
+  leavesColor 0 1 0
+}
+RectangleArena {
+  floorSize 7 7
+  floorTileSize 3.5 3.5
+  wallHeight 0.3
+}
+FloorLight {
+  translation 2.97 -2.88 -0.0003936309254206627
+  rotation 0.44991151185380884 -0.8267615333952135 -0.33770549062669303 2.2498841559305296e-17
+  name "floor light2"
+  bulbColor 0.333333 0 0
+  supportColor 0.333333 0 0
+  pointLightColor 0.333333 0 0
+}
+Armchair {
+  translation -0.880000000216877 -2.899957141207686 -9.923748531593666e-05
+  rotation 2.307013718117121e-07 -2.3070050512944556e-07 0.9999999999999467 1.5707999985990395
+  name "armchair2"
+  color 0.333333 0 0
+}
+Robot {
+  translation 0.0002143208583258015 1.4734861717895578e-06 0.12529576586271995
+  rotation 0.0002631602236966688 0.0002662157291501237 -0.9999999299379386 1.5705681526948836
+  children [
+    DistanceSensor {
+      translation 0.36 0.06 0.02
+      rotation 0 0 1 0.21
+      children [
+        DEF sensor Shape {
+          appearance PBRAppearance {
+            baseColor 0.333333 0 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.09 0.06 0.03
+          }
+        }
+      ]
+      name "ds_left"
+      boundingObject USE sensor
+      physics Physics {
+      }
+      lookupTable [
+        0 0 0
+        1 1000 0
+      ]
+    }
+    DistanceSensor {
+      translation 0.36 -0.06 0.02
+      rotation 0 0 1 -0.21
+      children [
+        DEF sensor Shape {
+          appearance PBRAppearance {
+            baseColor 0.333333 0 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.09 0.06 0.03
+          }
+        }
+      ]
+      name "ds_right"
+      boundingObject USE sensor
+      physics Physics {
+      }
+      lookupTable [
+        0 0 0
+        1 1000 0
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 588.1431602995184
+        axis 0 1 0
+        anchor 0.21 0.29 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.21 0.29 0
+        rotation 0.2372413216567434 -0.687192863030062 0.686645850711346 2.6753649760742735
+        children [
+          DEF wheel Shape {
+            appearance PBRAppearance {
+              baseColor 0.494118 0 0
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.07
+              radius 0.13
+            }
+          }
+        ]
+        boundingObject USE wheel
+        physics DEF physics_wh Physics {
+          density 100
+        }
+        linearVelocity -1.2590866623344972e-06 -1.4318256240676026e-10 9.26326696334548e-08
+        angularVelocity 3.676695537098106e-10 1.6795663407203724e-07 7.2363190642157906e-12
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 580.7663173472745
+        axis 0 1 0
+        anchor -0.21 0.29 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel3"
+        }
+      ]
+      endPoint Solid {
+        translation -0.21 0.29 0
+        rotation 0.1519474336890858 0.6991744841228603 -0.6986179343151968 2.839768061242924
+        children [
+          DEF wheel Shape {
+            appearance PBRAppearance {
+              baseColor 0.494118 0 0
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.07
+              radius 0.13
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE wheel
+        physics DEF physics_wh Physics {
+          density 100
+        }
+        linearVelocity -1.2638000561995814e-06 -4.2109876475080285e-10 9.280881129924307e-08
+        angularVelocity 3.961143896637005e-10 1.6856894714552444e-07 7.295473910345619e-12
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 259.1938672864913
+        axis 0 1 0
+        anchor -0.21 -0.29 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel4"
+        }
+      ]
+      endPoint Solid {
+        translation -0.21 -0.29 0
+        rotation -0.5723960119581609 -0.5800423372288057 0.5795806177888776 4.182029670239798
+        children [
+          DEF wheel Shape {
+            appearance PBRAppearance {
+              baseColor 0.494118 0 0
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.07
+              radius 0.13
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject USE wheel
+        physics DEF physics_wh Physics {
+          density 100
+        }
+        linearVelocity 1.2650566885862537e-06 3.141211339503096e-11 9.521019375153607e-08
+        angularVelocity 5.204701069985245e-10 -1.6018083034484772e-07 7.269645785545024e-12
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 272.0129773184488
+        axis 0 1 0
+        anchor 0.21 -0.29 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation 0.21 -0.29 0
+        rotation -0.47545670265739565 -0.6223171352808737 0.6218217646833887 4.029852225912489
+        children [
+          DEF wheel Shape {
+            appearance PBRAppearance {
+              baseColor 0.494118 0 0
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.07
+              radius 0.13
+            }
+          }
+        ]
+        name "solid(3)"
+        boundingObject USE wheel
+        physics DEF physics_wh Physics {
+          density 100
+        }
+        linearVelocity 1.2600152416510563e-06 3.090362784691603e-10 9.503401903014932e-08
+        angularVelocity 4.3896625905752615e-10 -1.595252897055578e-07 7.236945376111751e-12
+      }
+    }
+    DEF body Shape {
+      appearance PBRAppearance {
+        baseColor 0.764706 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.79 0.5 0.11
+      }
+    }
+    GPS {
+      children [
+        Solid {
+          translation 0 0 0.06
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 1 0.333333 0.498039
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.04
+                radius 0.05
+              }
+            }
+          ]
+        }
+      ]
+      name "global"
+    }
+    InertialUnit {
+      translation 0.15 0 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.760784 0 0.760784
+            metalness 0
+          }
+          geometry Box {
+            size 0.07 0.07 0.07
+          }
+        }
+      ]
+      name "imu"
+    }
+    Solid {
+      translation -0.2 0 0.54
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.1 0.1 1
+          }
+        }
+      ]
+      name "Solid"
+    }
+    SliderJoint {
+      jointParameters JointParameters {
+      }
+      device [
+        LinearMotor {
+          name "linear"
+          maxPosition 0.8
+        }
+      ]
+      endPoint Solid {
+        translation -0.2 -0.35 0.2
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 1 1
+              metalness 0
+            }
+            geometry Box {
+              size 0.1 0.6 0.1
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0 0 1
+              anchor 0 -0.32 0
+            }
+            device [
+              RotationalMotor {
+                name "RM"
+              }
+            ]
+            endPoint Solid {
+              translation 0 -0.32 0
+              rotation 1 4.908493704946862e-18 4.908493704946862e-18 1.57
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 1 0.666667 1
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.05
+                    radius 0.04
+                  }
+                }
+                Camera {
+                  translation 0 0 0.02
+                  rotation 0.5088081988257467 0.6625242588929989 0.5497052148069745 -1.9142553071795865
+                  name "CAM"
+                  fieldOfView 1
+                  width 1080
+                  height 1080
+                  recognition Recognition {
+                    frameThickness 3
+                  }
+                }
+              ]
+            }
+          }
+        ]
+        name "solid(4)"
+      }
+    }
+  ]
+  boundingObject USE body
+  physics Physics {
+    density 500
+  }
+  controller "Keyboard"
+  linearVelocity 3.8808984721544e-10 -5.7184849772249045e-11 9.413786470403761e-08
+  angularVelocity 4.328612604990963e-10 4.225101376216581e-09 7.23310647393332e-12
+}
+Chair {
+  translation 3.11 -1.19412e-06 0
+  rotation 0 0 1 3.14159
+  color 0.8 0 0
+}
+Chair {
+  translation 1.75 1.45 0
+  rotation 0 0 1 -1.5707953071795862
+  name "chair(1)"
+  color 0.7 0 0
+}
+Chair {
+  translation 1.78 -1.39 0
+  rotation 0 0 -1 -1.5707953071795862
+  name "chair(2)"
+  color 0.7 0 0
+}
+RoundTable {
+  translation 1.74 0 0
+  appearance VarnishedPine {
+    colorOverride 0.4 0 0
+    textureTransform TextureTransform {
+      scale 6 6
+    }
+  }
+}
+Solid {
+  translation 1.22 0 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Cone {
+        bottomRadius 0.1
+        height 0.2
+      }
+    }
+  ]
+  recognitionColors [
+    1 0 0
+  ]
+}
